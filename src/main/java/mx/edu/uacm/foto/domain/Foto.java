@@ -18,6 +18,9 @@ public class Foto {
 
 	private String descripcion;
 
+	/*
+	 Aqui se tiene que cambiar si es mysql
+	 */
 	@Lob
 	//@Column(columnDefinition = "TEXT")
 	private byte[] foto;
