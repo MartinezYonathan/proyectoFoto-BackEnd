@@ -1,6 +1,5 @@
 package mx.edu.uacm.foto.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -67,4 +66,10 @@ public class Foto {
 	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
+	
+	@Override
+	public String toString() {
+		return "FotoR [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", foto=" + "]";
+	}
+	
 }

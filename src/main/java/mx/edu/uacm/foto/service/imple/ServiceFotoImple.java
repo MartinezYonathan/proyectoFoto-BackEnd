@@ -38,12 +38,12 @@ public class ServiceFotoImple implements ServiceFoto {
 	public Foto update(FotoRequest foto) {
 		log.debug("_______________________________________________________");
 		log.debug("-SER---------------------                        update");
-
+		
 		Foto newFoto = new Foto();
+		newFoto.setId(foto.getId());
 		newFoto.setNombre(foto.getNombre());
 		newFoto.setDescripcion(foto.getDescripcion());
 		newFoto.setFoto(foto.getFoto().getBytes());
-
 		return fotoRepository.save(newFoto);
 	}
 
@@ -65,6 +65,7 @@ public class ServiceFotoImple implements ServiceFoto {
 		for (Foto foto : fotoRepository.findAll()) {
 			
 			f = new FotoRequest();
+			f.setId(foto.getId());
 			f.setNombre(foto.getNombre());
 			f.setDescripcion(foto.getDescripcion());
 			String s = new String(foto.getFoto());

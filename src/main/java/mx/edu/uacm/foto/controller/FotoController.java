@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import mx.edu.uacm.foto.domain.Foto;
 import mx.edu.uacm.foto.message.request.FotoRequest;
-import mx.edu.uacm.foto.repository.FotoRepository;
 import mx.edu.uacm.foto.service.ServiceFoto;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -27,9 +26,6 @@ import mx.edu.uacm.foto.service.ServiceFoto;
 @RequestMapping(value = { "/api" })
 public class FotoController {
 	public static final Logger log = LogManager.getLogger(FotoController.class);
-
-	@Autowired
-	private FotoRepository fotoRepository;
 
 	@Autowired
 	private ServiceFoto fotoService;
@@ -59,7 +55,7 @@ public class FotoController {
 		log.debug("_______________________________________________________");
 		log.debug("-CON-----------------                        updateFoto");
 
-		return fotoService.add(foto);
+		return fotoService.update(foto);
 	}
 
 	@DeleteMapping("/foto/{id}")
